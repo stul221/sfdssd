@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #080b18;
+    color: #ffffff;
+}
+
+.intro {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(91, 70, 140, 0.20),
+            transparent 55%
+        ),
+        linear-gradient(
+            180deg,
+            #080b18 0%,
+            #101329 50%,
+            #080b18 100%
+        );
+}
+
+.intro-content {
+    max-width: 800px;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.intro-subtitle {
+    color: #b8a9dc;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.intro h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 7vw, 78px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.intro h1 span {
+    display: block;
+    font-style: italic;
+    color: #d4b5ff;
+}
+
+.intro-date {
+    font-size: 14px;
+    color: #9297b2;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+}
+
+.intro-button {
+    padding: 15px 34px;
+    border: 1px solid rgba(210, 190, 255, 0.4);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.intro-button:hover {
+    background: rgba(191, 160, 255, 0.15);
+    border-color: #c8a9ff;
+    box-shadow: 0 0 25px rgba(170, 130, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .intro-subtitle {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .intro-date {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .intro-button {
+        padding: 14px 28px;
+    }
+}
+
+
+
+/* Контейнер конверта */
+
+.envelope-container {
+    animation: fadeIn 1s ease forwards;
+}
+
+.envelope {
+    width: 260px;
+    height: 170px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+/* Основа конверта */
+
+.envelope-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #d9c1ed;
+    border-radius: 5px;
+    overflow: visible;
+}
+
+/* Письмо */
+
+.letter {
+    position: absolute;
+    width: 90%;
+    height: 140px;
+    left: 5%;
+    bottom: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #fff8f2;
+    color: #493b57;
+    border-radius: 5px;
+
+    font-family: 'Playfair Display', serif;
+
+    z-index: 1;
+
+    animation: letterRise 1.5s ease 1s forwards;
+}
+
+/* Клапан */
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 130px solid transparent;
+    border-right: 130px solid transparent;
+    border-top: 100px solid #b99bd8;
+
+    transform-origin: top;
+    transform: rotateX(0deg);
+
+    z-index: 2;
+
+    animation: openFlap 1s ease 0.5s forwards;
+}
+
+/* Анимация открытия */
+
+@keyframes openFlap {
+    to {
+        transform: rotateX(180deg);
+    }
+}
+
+/* Письмо поднимается */
+
+@keyframes letterRise {
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+/* Плавное появление */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Следующий раздел */
+
+.story {
+    animation: fadeIn 1.2s ease forwards;
+    text-align: center;
+}
+
+.story h1 {
+    font-family: 'Playfair Display', serif;
+    color: #d4b5ff;
+    font-size: 48px;
+}
+
+.story p {
+    color: #b8a9dc;
+    margin-top: 20px;
+}
+
+
+/* Секция причин */
+
+.reasons {
+    min-height: 100vh;
+    padding: 100px 24px;
+    background:
+        radial-gradient(circle at 50% 30%,
+        rgba(91, 70, 140, 0.15),
+        transparent 60%),
+        #080b18;
+}
+
+.reasons-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.reasons-subtitle {
+    color: #b8a9dc;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.reasons h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 400;
+    color: #d4b5ff;
+}
+
+.reasons-description {
+    color: #9297b2;
+    margin-top: 18px;
+    margin-bottom: 55px;
+}
+
+/* Сетка карточек */
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Карточка */
+
+.reason-card {
+    height: 230px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.reason-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+.reason-card.opened .reason-card-inner {
+    transform: rotateY(180deg);
+}
+
+.reason-card-front,
+.reason-card-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    border: 1px solid rgba(210, 190, 255, 0.2);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.reason-card-front span {
+    font-size: 35px;
+    color: #d4b5ff;
+    margin-bottom: 15px;
+}
+
+.reason-card-front h3 {
+    color: #eee3ff;
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.reason-card-front p {
+    color: #9297b2;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.reason-card-back {
+    transform: rotateY(180deg);
+    background: rgba(191, 160, 255, 0.12);
+}
+
+.reason-card-back p {
+    color: #eee3ff;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Адаптация для телефона */
+
+@media (max-width: 750px) {
+    .reasons-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .reason-card {
+        height: 210px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reason-card {
+        height: 190px;
+    }
+}
+
+
+.love-letter {
+    min-height: 100vh;
+    padding: 100px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(120, 90, 170, 0.2),
+            transparent 65%
+        ),
+        #080b18;
+}
+
+.love-letter-content {
+    width: 100%;
+    max-width: 750px;
+    text-align: center;
+}
+
+.love-letter-subtitle {
+    color: #b8a9dc;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.love-letter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 5vw, 55px);
+    font-weight: 400;
+    color: #d4b5ff;
+    margin-bottom: 40px;
+}
+
+.letter-open-button {
+    padding: 15px 35px;
+    border: 1px solid rgba(210, 190, 255, 0.4);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.04);
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.letter-open-button:hover {
+    background: rgba(191, 160, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.letter-paper {
+    padding: 50px;
+    background: #f8f0e8;
+    color: #44384d;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3);
+    animation: letterReveal 1.2s ease forwards;
+}
+
+.letter-paper h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: #72547f;
+}
+
+.letter-paper p {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.letter-paper .letter-signature {
+    text-align: right;
+    margin-top: 35px;
+    color: #72547f;
+    font-style: italic;
+}
+
+@keyframes letterReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .letter-paper {
+        padding: 28px 22px;
+    }
+
+    .letter-paper h3 {
+        font-size: 25px;
+    }
+
+    .letter-paper p {
+        font-size: 15px;
+    }
+}
